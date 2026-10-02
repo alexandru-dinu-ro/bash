@@ -4,6 +4,6 @@ cd ~/dev/projects/test-automation && mvn test -Dtest=WriteCheckTest 2>&1 | grep 
 
 cd ~/dev/projects/test-automation && mvn test -Dtest=PolicyCleanupDryRunTest 2>&1 | grep -E "Cleanup|Sweep|DRY RUN|Candidates|look-alikes|would delete|skipped look-alike|Tests run:|BUILD"
 
-cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=com.example.tests.api.performance.simulations.SmokeSimulation -DperfSimulation=SmokeSimulation 2>&1 | grep -E "skipped|throttle|Sweep|Seeded|Setup complete|Setup failed|Safety stop|Teardown of|Deleted [0-9]|finished:|Please open|BUILD"
+cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=com.example.tests.api.performance.simulations.SmokeSimulation -DperfSimulation=SmokeSimulation -DseedRate=1 -DseedCount=20 2>&1 | grep -E "another performance run|Sweep|Seeded|Setup complete|Setup failed|Safety stop|Teardown of|Deleted [0-9]|finished:|Please open|BUILD"
 
 cd ~/dev/projects/test-automation && grep -E "delete failed|SocketTimeout|Seeded|Setup failed" target/artifacts/log4j2/run_log.log
