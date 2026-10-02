@@ -1,1 +1,1 @@
-cd ~/dev/projects/test-automation && mvn test -Dtest=ConnectivityCheckTest 2>&1 | grep -E "Connectivity check|Token initial|List policies|First policy|No policies|Tests run:|BUILD|ERROR|Exception"
+cd ~/dev/projects/test-automation && mvn test -DtestSuite=performance-unit.xml 2>&1 | grep -E "Tests run:|BUILD|FAIL"
