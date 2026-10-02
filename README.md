@@ -7,3 +7,5 @@ cd ~/dev/projects/test-automation && mvn test -Dtest=PolicyCleanupDryRunTest 2>&
 cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=com.example.tests.api.performance.simulations.SmokeSimulation -DperfSimulation=SmokeSimulation -DseedRate=1 -DseedCount=20 2>&1 | grep -E "another performance run|Sweep|Seeded|Setup complete|Setup failed|Safety stop|Teardown of|Deleted [0-9]|finished:|Please open|BUILD"
 
 cd ~/dev/projects/test-automation && grep -E "delete failed|SocketTimeout|Seeded|Setup failed" target/artifacts/log4j2/run_log.log
+
+cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=com.example.tests.api.performance.simulations.SmokeSimulation -DperfSimulation=SmokeSimulation -DseedCount=20 2>&1 | grep -E "another performance run|Seeded|Setup complete|Setup failed|Safety stop|Deleted [0-9]|finished:|BUILD"
