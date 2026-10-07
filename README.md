@@ -21,3 +21,7 @@ cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=
 --
 
 mvn test -DtestSuite=performance-unit.xml 2>&1 | grep -E "Tests run:|BUILD|FAIL"
+
+--
+
+cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=com.example.tests.api.performance.simulations.StressMixedSimulation -DperfSimulation=StressMixedSimulation 2>&1 | grep -E "Request failed|Safety stop|finished:|BUILD"
