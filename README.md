@@ -23,3 +23,10 @@ cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=
 cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=com.example.tests.api.performance.simulations.SoakMixedSimulation -DperfSimulation=SoakMixedSimulation 2>&1 | grep -E "Seeded|Setup failed|Safety stop|p95 soak|Request failed|finished:|request count|percentile|BUILD"
 
 Add performance test workflows (smoke, load, stress, spike, soak) and helper scripts
+
+  # TEMPORARY - remove before merging: runs smoke with default settings on pushes to this branch
+  push:
+    branches: [your-feature-branch]
+    paths:
+      - ".github/workflows/performance-*.yml"
+      - ".github/scripts/perf-*.sh"
