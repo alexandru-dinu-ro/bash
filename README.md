@@ -21,3 +21,5 @@ cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=
 cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=com.example.tests.api.performance.simulations.SpikeMixedSimulation -DperfSimulation=SpikeMixedSimulation 2>&1 | grep -E "Seeded|Setup failed|Safety stop|p95 |Recovery check|Request failed|finished:|request count|percentile|BUILD"
 
 cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=com.example.tests.api.performance.simulations.SoakMixedSimulation -DperfSimulation=SoakMixedSimulation 2>&1 | grep -E "Seeded|Setup failed|Safety stop|p95 soak|Request failed|finished:|request count|percentile|BUILD"
+
+Add performance test workflows (smoke, load, stress, spike, soak) and helper scripts
