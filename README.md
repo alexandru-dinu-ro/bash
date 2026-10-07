@@ -23,11 +23,19 @@ cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=
 cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=com.example.tests.api.performance.simulations.SoakMixedSimulation -DperfSimulation=SoakMixedSimulation 2>&1 | grep -E "Seeded|Setup failed|Safety stop|p95 soak|Request failed|finished:|request count|percentile|BUILD"
 
 AUTOMATION_PERFORMANCE_TEST_TOKEN_SUBDOMAIN	tokenSubdomain
+
 AUTOMATION_PERFORMANCE_TEST_CLIENT_ID	clientId
+
 AUTOMATION_PERFORMANCE_TEST_CLIENT_SECRET	clientSecret
+
 AUTOMATION_PERFORMANCE_TEST_API_SUBDOMAIN	apiSubdomain
+
 AUTOMATION_PERFORMANCE_TEST_PRINCIPAL_ID	principalId
+
 AUTOMATION_PERFORMANCE_TEST_PRINCIPAL_NAME	principalName
+
 AUTOMATION_PERFORMANCE_TEST_PRINCIPAL_TYPE	principalType (USER)
+
 AUTOMATION_PERFORMANCE_TEST_PRINCIPAL_SOURCE_DIRECTORY_NAME	principalSourceDirectoryName
+
 AUTOMATION_PERFORMANCE_TEST_PRINCIPAL_SOURCE_DIRECTORY_ID	principalSourceDirectoryId
