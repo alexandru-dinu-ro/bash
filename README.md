@@ -30,3 +30,17 @@ Add performance test workflows (smoke, load, stress, spike, soak) and helper scr
     paths:
       - ".github/workflows/performance-*.yml"
       - ".github/scripts/perf-*.sh"
+
+
+      - name: TEMPORARY - network check (remove after diagnosis)
+        env:
+          TOKEN_SUBDOMAIN: ${{ secrets.AUTOMATION_PERFORMANCE_TEST_TOKEN_SUBDOMAIN }}
+          PROXY: http://PROXY_HOST:8080
+        run: |
+          target="https://${TOKEN_SUBDOMAIN}.id.cyberark.cloud/"
+          echo "Direct:"
+          curl -sS -o /dev/null --max-time 20 -w "  HTTP %{http_code}\n" "$target" || echo "  failed"
+          echo "Through the proxy:"
+          curl -sS -o /dev/null --max-time 20 -x "$PROXY" -w "  HTTP %{http_code}\n" "$target" || echo "  failed"
+          echo "Proxy-related environment variables on this worker:"
+          env | grep -i -E '^(https?|no)_proxy=' | sed -E 's/=.*/=(set)/' || echo "  none"
