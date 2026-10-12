@@ -23,14 +23,3 @@ cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=
 cd ~/dev/projects/test-automation && mvn gatling:test -Dgatling.simulationClass=com.example.tests.api.performance.simulations.SoakMixedSimulation -DperfSimulation=SoakMixedSimulation 2>&1 | grep -E "Seeded|Setup failed|Safety stop|p95 soak|Request failed|finished:|request count|percentile|BUILD"
 
 bash ./mvnw -B test -DtestSuite=performance-unit.xml 2>&1 | grep -E "Tests run:|BUILD|FAIL"
-
---
-  # TEMPORARY - remove before merging: test run on pushes to this branch
-  push:
-    branches: [your-feature-branch]
-    paths:
-      - ".github/workflows/performance-all.yaml"
---
-          SIMULATIONS: ${{ inputs.simulations || 'Smoke, LoadList' }}  # TEMPORARY fallback for the push test
---
-
